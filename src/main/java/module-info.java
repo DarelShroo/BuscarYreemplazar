@@ -1,8 +1,9 @@
-module dad.buscaryreemplazar {
+module com.dad.buscaryreemplazar {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
 
 
-    opens dad.buscaryreemplazar to javafx.fxml;
+    opens com.dad.buscaryreemplazar to javafx.fxml;
     exports dad.buscaryreemplazar;
 }

@@ -11,6 +11,7 @@ public class BuscarYreemplazar extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Label buscarLabel = new Label("Buscar:");
@@ -37,22 +38,22 @@ public class BuscarYreemplazar extends Application {
         //Primera Fila
         gridPane.add(buscarLabel, 0, 0);
         // node, columnIndex, rowIndex, columnSpan, rowSpan:
-        gridPane.add(buscarTextField, 1, 0,2,1);
-        gridPane.add(buttonBuscar, 3,0 );
+        gridPane.add(buscarTextField, 1, 0, 2, 1);
+        gridPane.add(buttonBuscar, 3, 0);
 
         //Segunda Fila
         gridPane.add(reemplazarLabel, 0, 1);
-        gridPane.add(reemplazarTextField, 1, 1, 2,1);
+        gridPane.add(reemplazarTextField, 1, 1, 2, 1);
         gridPane.add(buttonReemplazar, 3, 1);
 
         //Tercera Fila
-        gridPane.add(checkBoxMayusMinus,1,2);
-        gridPane.add(checkBoxBuscarAtras,2,2);
+        gridPane.add(checkBoxMayusMinus, 1, 2);
+        gridPane.add(checkBoxBuscarAtras, 2, 2);
         gridPane.add(buttonReemplazarTodo, 3, 2);
 
         //Cuarta Fila
-        gridPane.add(checkBoxExpr, 1,3);
-        gridPane.add(checkBoxResResult,2,3);
+        gridPane.add(checkBoxExpr, 1, 3);
+        gridPane.add(checkBoxResResult, 2, 3);
 
         //Quinta fila
         gridPane.add(buttonCerrar, 3, 3);
@@ -74,24 +75,8 @@ public class BuscarYreemplazar extends Application {
 
         Scene myScene = new Scene(gridPane, 500, 160);
         primaryStage.setScene(myScene);
-        String titulo = "Buscar y Reemplazar";
-        primaryStage.setTitle(center(titulo, sceneWidth(myScene.getWidth(), titulo.length())));
-        myScene.widthProperty().addListener((obs, oldVal, newVal) -> {
-            primaryStage.setTitle(center(titulo, sceneWidth((double)newVal, titulo.length())));
-        });
-
+        primaryStage.setTitle("Buscar y Reemplazar");
         primaryStage.centerOnScreen();
         primaryStage.show();
-    }
-    public static String center(String text, double len){
-        String out = String.format("%"+len+"s%s%"+len+"s", "",text,"");
-        float mid = (out.length()/2);
-        float start = (float) (mid - (len/2));
-        float end = (float) (start + len);
-        return out.substring((int)start, (int)end);
-    }
-
-    public double sceneWidth(double myScene, int titulo) {
-        return myScene/4-titulo;
     }
 }
